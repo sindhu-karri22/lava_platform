@@ -1,0 +1,18 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: hello_world
+    description: "hello-world test"
+    scope:
+        - lava_platform
+    test_type: test_definition
+    test_env:
+        type: prompt_linux
+    test_timeout: 3
+
+params:
+  LINUX_MSG: "world"
+
+run:
+    steps:
+        - cd ./tests/edgeos/hello-world
+        - ./hello-world.sh -m "${LINUX_MSG}"
